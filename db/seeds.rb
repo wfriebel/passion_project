@@ -1,14 +1,20 @@
 users = User.all
-users.each {|user| users.destroy}
+users.each {|user| user.destroy}
 
 questions = Question.all
 questions.each {|question| question.destroy}
 
-content_tags = ContentTag.all
-content_tags.each {|content_tag| content_tag.destroy}
+tags = Tag.all
+tags.each {|tag| tag.destroy}
 
 categories = Category.all
 categories.each {|category| category.destroy}
+
+courses = Course.all
+courses.each {|course| course.destroy}
+
+assignments = Assignment.all
+assignments.each {|assignment| assignment.destroy}
 
 user = User.create(
 	first_name: "Will", 
@@ -25,17 +31,44 @@ user.questions << question1
 user.questions << question2
 user.questions << question3
 
-factoring = ContentTag.create(name: "factoring")
-trig = ContentTag.create(name: "trig")
-polynomial = ContentTag.create(name: "polynomial")
+algebra = Course.create(name: "algebra")
+geometry = Course.create(name: "geometry")
 
-question1.content_tags << factoring
-question1.content_tags << trig
+user.courses << algebra
+user.courses << geometry
 
-question2.content_tags << trig
-question2.content_tags << polynomial
+assignment1 = Assignment.create(name: "assignment1")
+assignment2 = Assignment.create(name: "assignment2")
+assignment3 = Assignment.create(name: "assignment3")
+assignment4 = Assignment.create(name: "assignment4")
 
-question3.content_tags << polynomial
-question3.content_tags << factoring
+assignment1.questions << question1
+assignment1.questions << question2
+assignment2.questions << question2
+assignment2.questions << question3
+assignment3.questions << question3
+assignment3.questions << question1
+assignment4.questions << question1
+assignment4.questions << question2
 
+algebra.assignments << assignment1
+algebra.assignments << assignment2
+geometry.assignments << assignment3
+geometry.assignments << assignment4
+
+
+factoring = Tag.create(name: "factoring")
+trig = Tag.create(name: "trig")
+polynomial = Tag.create(name: "polynomial")
+
+user.tags << factoring
+user.tags << trig
+user.tags << polynomial
+
+question1.tags << factoring
+question1.tags << trig
+question2.tags << trig
+question2.tags << polynomial
+question3.tags << polynomial
+question3.tags << factoring
 
