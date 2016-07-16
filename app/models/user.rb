@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 	include BCrypt
 
 	has_many :questions
+	has_many :tags
+	has_many :courses
 
 	def password
 		@password ||= Password.new(password_hash)
