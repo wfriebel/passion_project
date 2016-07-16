@@ -16,12 +16,13 @@ courses.each {|course| course.destroy}
 assignments = Assignment.all
 assignments.each {|assignment| assignment.destroy}
 
-user = User.create(
+user = User.new(
 	first_name: "Will", 
 	last_name: "Friebel", 
 	email: "will@will.com", 
-	password: "123"
 	)
+user.password = "123"
+user.save!
 
 question1 = Question.create(content: "First quesion")
 question2 = Question.create(content: "Second quesion")

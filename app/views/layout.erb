@@ -26,9 +26,14 @@
   <title></title>
 </head>
 <body>
-  <div class="jumbotron">
-    <p>This is the jumbotron</p>
-  </div>
+  <% if session[:id] %>
+    <a href="/sign_out">Sign Out</a>
+  <% end %>
+
   <%= yield %>
+
+  <% if !session[:id] %>
+    <a href="">Register</a>
+  <% end %>
 </body>
 </html>
