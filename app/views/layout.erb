@@ -26,9 +26,15 @@
   <title></title>
 </head>
 <body>
-  <div class="jumbotron">
-    <p>This is the jumbotron</p>
-  </div>
+  <% if session[:id] %>
+    <% user = User.find(session[:id]) %>
+    <a href="/users/<%= session[:id] %>" class=username>
+      <%= user.first_name %> <%= user.last_initial %>.
+    </a>
+    <a href="/sign_out">Sign Out</a>
+  <% end %>
+
   <%= yield %>
+
 </body>
 </html>
