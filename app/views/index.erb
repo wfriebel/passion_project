@@ -1,11 +1,11 @@
 <% if @error %>
 	<p class="error"><%= @error %></p>
 <% end %>
-<form action="/users" method="post">
+<form action="/login" method="post">
 	<input type="text" name="user[email]" placeholder="Email">
 	<input type="password" name="user[password]" placeholder="Password">
 	<input type="submit" value="Login">
 </form>
-<% if !session[:id] %>
+<% if !session[:user_id] %>
     <a href="/users/new">Register</a>
   <% end %>
