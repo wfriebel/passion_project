@@ -1,1 +1,21 @@
-<%= @user.id %>
+<% if !logged_in? %>
+	<p>You are not logged in!</p>
+	<a href="/">Login</a>
+<% else %>
+	<% if !session[:has_courses] %>
+		<h2>Create A New Course</h2>
+	<% else %> 
+		<h3>Create A New Course</h3>
+		<h3>Select A Course</h3>
+		<ul>
+			<% @user.courses.order(name: :asc).each do |course| %>
+				<li>
+					<a 
+					href="/users/<%= session[:user_id] %>/courses/<%= course.id %>">
+						<%= course.name %>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+<% end %>

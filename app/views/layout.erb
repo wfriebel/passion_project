@@ -26,9 +26,9 @@
   <title></title>
 </head>
 <body>
-  <% if session[:id] %>
-    <% user = User.find(session[:id]) %>
-    <a href="/users/<%= session[:id] %>" class=username>
+  <% if session[:user_id] %>
+    <% user = User.find(session[:user_id]) %>
+    <a href="/users/<%= session[:user_id] %>" class=username>
       <%= user.first_name %> <%= user.last_initial %>.
     </a>
     <a href="/sign_out">Sign Out</a>
