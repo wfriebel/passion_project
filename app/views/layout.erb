@@ -27,13 +27,14 @@
 </head>
 <body>
   <% if session[:id] %>
+    <% user = User.find(session[:id]) %>
+    <a href="/users/<%= session[:id] %>" class=username>
+      <%= user.first_name %> <%= user.last_initial %>.
+    </a>
     <a href="/sign_out">Sign Out</a>
   <% end %>
 
   <%= yield %>
 
-  <% if !session[:id] %>
-    <a href="">Register</a>
-  <% end %>
 </body>
 </html>

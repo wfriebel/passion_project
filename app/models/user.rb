@@ -39,4 +39,8 @@ class User < ActiveRecord::Base
 			return nil
 		end
 	end
+
+	def last_initial
+		last_name[0]
+	end
 end
