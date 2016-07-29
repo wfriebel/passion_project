@@ -1,0 +1,21 @@
+<h1>Assignment: <%= @assignment.name %></h1>
+<a href="/assignments/<%= @assignment.id %>/questions">+ Add Questions</a>
+<ul>
+	<% @assignment.questions.each do |question| %>
+		<li>
+			<b> <%= question.content %> </b>
+			<p>Rigor: <%= question.rigor %></p>
+			<p>
+				Tags:
+				<% question.tags.each do |tag| %>
+					<form action="/assignments/<%= @assignment.id %>/questions/find_by_tag" method="get">
+						<% if tag.name != "" %>
+							<input type="hidden" name="tag" value="<%= tag.name %>">
+							<input type="submit" value="<%= tag.name %>">
+							<% end %>
+					</form>
+				<% end %>
+			</p>
+		</li>
+	<% end %>
+</ul>

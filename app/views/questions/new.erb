@@ -1,0 +1,22 @@
+<h1>New Question</h1>
+<form class="question-form" action="/questions" method="post">
+	<input type="hidden" name="assignment_id" value="<%= @assignment.id %>">
+	<label>Type Question Here:</label>
+	<textarea rows="4" cols="50" name="content"></textarea>
+	<label for="rigor">Select Rigor Level</label>
+	<select name="rigor">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	<label>Add Tags (Up To Three)</label>
+	<input type="text" name="tag1">
+	<input type="text" name="tag2">
+	<input type="text" name="tag3">
+	<input id="create-question-button" type="submit" value="Create New Question">
+</form>
+<section class="tag-list">
+	<%= erb :"tags/index" %>
+</section>

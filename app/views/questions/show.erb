@@ -1,0 +1,9 @@
+<h1>Question</h1>
+<p><%= @question.content %></p>
+<br>
+<h2>Tags</h2>
+<ul>
+	<% @question.tags.each do |tag| %>
+		<li><%= tag.name %></li>
+	<% end %>
+</ul>

@@ -1,0 +1,15 @@
+<section class="register-form">
+	<form action="/register" method='post'>
+		<input type="text" name="user[first_name]" placeholder="First Name">
+		<input type="text" name="user[last_name]" placeholder="Last Name">
+		<input type="text" name="user[email]" placeholder="Email">
+		<input type="text" name="user[password]" placeholder="Password">
+		<input type="submit" value="Register">
+	</form>
+
+	<% if @errors %>
+		<% @errors.each do |error| %>
+			<p class="error"><%= error %></p>
+		<% end %>
+	<% end %>
+</section>
