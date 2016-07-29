@@ -1,0 +1,76 @@
+body {
+	margin: 30px auto;
+	width: 70%;
+	font-family: helvetica;
+}
+
+.nav {
+	float: right;
+}
+
+#main-title {
+	float: left;
+	margin: 0;
+}
+
+.form-container {
+	position: relative;
+}
+
+.register-form {
+	position: absolute;
+	top: 100px;
+	width: 25%;
+	left: 37%;
+	margin: 0 auto;
+}
+
+.register-form input {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.login-form {
+	position: absolute;
+	top: 100px;
+	left: 28%;
+	margin: 0 auto;
+}
+
+.question-form {
+	position: absolute;
+	top: 130px;
+	margin: 0 auto;
+	float: left;
+}
+
+#create-question-button {
+	display: block;
+}
+
+.question-form input, .question-form label {
+	display: block;
+}
+
+.question-form select {
+	display: inline-block;
+}
+
+.tag-list {
+	top: 120px;
+	float: right;
+	margin: 0;
+}
+
+.tag-list h2 {
+	margin: 0;
+}
+
+.error {
+	color: red;
+}
+
+textarea {
+	display: block;
+}

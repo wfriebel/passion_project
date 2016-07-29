@@ -1,0 +1,6 @@
+<h1>Create A New Assignment</h1>
+<form action="/courses/<%= @course.id %>/assignments" method="post">
+	<label for="name">Assignment Name: </label>
+	<input type="text" name="name">
+	<input type="submit" value="Create Assignment">
+</form>

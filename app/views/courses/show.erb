@@ -1,2 +1,6 @@
-<% course = Course.find(session[:course_id]) %>
- <p>This is the course page for <%= course.name %></p>
+<h1><%= @course.name  %></h1>
+<form action="/courses/<%= @course.id %>" method="post">
+	<input type="hidden" name="_method" value="delete">
+	<input type="submit" value="Delete Course">
+</form>
+<%= erb :"assignments/index", locals: {course: @course} %>

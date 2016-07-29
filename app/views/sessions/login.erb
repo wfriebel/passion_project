@@ -1,0 +1,13 @@
+<div class="form-container">
+	<section class="login-form">
+		<form action="/login" method="post">
+			<input type="text" name="email" placeholder="Email">
+			<input type="text" name="password" placeholder="Password">
+			<input type="submit" value="Login">
+		</form>
+
+		<% if @errors %>
+			<p class="error"><%= @errors %></p>
+		<% end %>
+	</section>
+</div>

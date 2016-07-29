@@ -1,1 +1,8 @@
-"Questions index"
+<h1>Questions</h1>
+<a href="/assignments/<%= @assignment.id %>/questions/new">+ Create A New Question</a>
+<h2>Find A Question</h2>
+<form action="/assignments/<%= @assignment.id %>/questions/find_by_tag" method="get">
+	<label for="tag">Search By Tag Name: </label>
+	<input type="text" name="tag">
+	<input type="submit" value="Find Questions">
+</form>

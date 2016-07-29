@@ -1,0 +1,6 @@
+<h2>Current Tags</h2>
+<ul>
+	<% current_user.tags.each do |tag|%>
+		<li><%= tag.name %></li>
+	<% end %>
+</ul>
